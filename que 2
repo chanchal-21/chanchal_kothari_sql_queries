@@ -1,6 +1,5 @@
-select distinct s.company_name As "supplier",c.category_name
-from suppliers s inner join products p
-On s.supplier_id = p.supplier_id
-Inner join categories c 
-on c.category_id = p.category_id
-where category_name ="Seafood";
+SELECT s.supplier_id, s.company_name
+FROM suppliers s
+JOIN products p ON s.supplier_id = p.supplier_id
+JOIN categories c ON p.category_id = c.category_id
+WHERE c.category_name = 'Seafood';
